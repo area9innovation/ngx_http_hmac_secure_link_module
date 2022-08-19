@@ -236,8 +236,8 @@ ngx_http_secure_link_variable(ngx_http_request_t *r,
 
             ngx_http_set_ctx(r, ctx, ngx_http_hmac_secure_link_module);
 
-            ctx->expires.len = value.len;
-            ctx->expires.data = value.data;
+            ctx->expires.len = last - p;
+            ctx->expires.data = p;
         }
     }
 
